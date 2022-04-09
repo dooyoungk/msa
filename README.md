@@ -1,8 +1,8 @@
 # MSA 구축 과제 - (STEP.0) 초기 프로젝트 구성
 
-## 구현 화면
-* 게시물 목록 조회 (METHOD : GET, URI : /board) : BoardController.java의 getViewBoardMain 메소드 참고
-* 게시물 상세 조회 (METHOD : GET, URI : /board/{id}) : BoardController.java의 getViewBoard 메소드 참고
+## 구현 화면 및 기능
+* 게시물 목록 화면 (METHOD : GET, URI : /board) : BoardController.java의 getViewBoardMain 메소드 참고
+* 게시물 상세 화면 (METHOD : GET, URI : /board/{id}) : BoardController.java의 getViewBoard 메소드 참고
 * 게시물 등록 화면 (METHOD : GET, URI : /board/new) : BoardController.java의 getViewBoardNew 메소드 참고
 * 게시물 수정 화면 (METHOD : GET, URI : /board/{id}/edit) : BoardController.java의 getViewBoardEdit 메소드 참고
 * 게시물 등록 처리 (METHOD : POST, URI : /board) : BoardController.java의 addBoard 메소드 참고
