@@ -14,3 +14,5 @@
   * DB 경우 별도의 설치 필요 없음
   * 첫 구동 시, DB 파일 생성 및 테이블 생성까지 진행
 * View Engine : Thymeleaf
+* CSS : Bootstrap 4.2.1
+* JavaScript : JQuery 3.3.1
