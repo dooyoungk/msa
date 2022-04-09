@@ -14,10 +14,17 @@
     </style>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>
+    <script type="text/javascript" th:inline="javascript">
         function goDetail(id) {
-            location.href = "/board/" + id;
+            let url = /*[[@{/board/}]]*/ "/board/";
+            location.href = url + id;
         }
+
+        $(document).ready(function() {
+            $("#btnMoveWriteForm").click(function() {
+                location.href = /*[[@{/board/new}]]*/ "/board/new";
+            });
+        });
     </script>
 </head>
 <body>
