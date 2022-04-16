@@ -27,6 +27,8 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+  mapper-locations:
+    - /mapper/**/*.xml
 
 # server.port : 8080 으로 고정
 # server.servlet.encoding : Embedded Tomcat의 인코딩 설정
