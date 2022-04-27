@@ -1,23 +1,14 @@
 # spring.application.name : Application Name 지정 (front-end로 고정)
 # spring.datasource : 연결 DB 설정
-# spring.sql.init.mode : DB 처음 연결 되었을 때의 초기화 SQL 실행 여부 확인
-# spring.h2.console : H2 DB Console 페이지 오픈 여부 확인
 # spring.mvc.hiddenmethod.filter.enabled : MVC 환경에서의 Hidden Method 사용 여부 확인 (Form 을 통해 PUT, DELETE 사용하고자 할 때 필요함)
 spring:
   application:
     name: front-end
   datasource:
-    url: jdbc:h2:file:./board
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-  sql:
-    init:
-      mode: always
-  h2:
-    console:
-      enabled: true
-      path: /h2_console
+    url: jdbc:mysql://fishsin.iptime.org:13306/datasolution?characterEncoding=UTF-8
+    username: datasolution
+    password: "data1!"
+    driver-class-name: com.mysql.cj.jdbc.Driver
   mvc:
     hiddenmethod:
       filter:

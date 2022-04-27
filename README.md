@@ -12,9 +12,11 @@
 ## Tech stack
 * Spring Boot : 2.6.6
 * JDK : 1.8
-* Database : H2 Database (Embedded File DB) & Mybatis
-  * DB 경우 별도의 설치 필요 없음
-  * 첫 구동 시, DB 파일 생성 및 테이블 생성까지 진행
+* Database : MySQL & Mybatis
+  * 자신의 MYSQL DB 연결 정보로 변경 필요
+    * [front-end/src/main/resources/application.yml/application.yml](front-end/src/main/resources/application.yml) 의 spring.datasource 설정 항목 변경 필요
+  * 테이블 생성 쿼리는 아래 파일을 참고
+    * [schema.sql](schema.sql)
 * View Engine : Thymeleaf
 * CSS : Bootstrap 4.2.1
 * JavaScript : JQuery 3.3.1
