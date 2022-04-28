@@ -2,11 +2,14 @@ plugins {
     id 'org.springframework.boot' version '2.6.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'eclipse'
 }
 
 group = 'kr.datasolution.msa'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+eclipse.project.name = 'step-0-front-end'
 
 configurations {
     compileOnly {
