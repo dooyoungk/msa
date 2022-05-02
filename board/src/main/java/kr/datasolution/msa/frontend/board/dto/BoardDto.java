@@ -1,6 +1,7 @@
 package kr.datasolution.msa.frontend.board.dto;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
+@NoArgsConstructor
 public class BoardDto {
     /** 게시물 ID */
     private int id;

@@ -8,3 +8,6 @@ CREATE TABLE BOARD (
     UPD_DT DATETIME,
     PRIMARY KEY (id)
 );
+
+
+select * from BOARD;

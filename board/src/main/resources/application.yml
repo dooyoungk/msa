@@ -5,9 +5,9 @@ spring:
   application:
     name: front-end
   datasource:
-    url: jdbc:mysql://fishsin.iptime.org:13306/datasolution?characterEncoding=UTF-8
-    username: datasolution
-    password: "data1!"
+    url: jdbc:mysql://34.125.170.174:3306/mysql?characterEncoding=UTF-8
+    username: dooyoungk
+    password: "1"
     driver-class-name: com.mysql.cj.jdbc.Driver
   mvc:
     hiddenmethod:
@@ -27,7 +27,7 @@ mybatis:
 #  : Spring Boot 2.3 버전 이후부터 재공되는 기능
 #  : 정상적으로 종료할 수 있도록 기다려주는 기본 시간은 30초. 만약 조정하고 싶다면 spring.lifecycle.timeout-per-shutdown-phase=1m 처럼 옵션 추가
 server:
-  port: 8080
+  port: 8088
   servlet:
     encoding:
       charset: UTF-8
@@ -41,3 +41,9 @@ management:
     web:
       exposure:
         include: "health,info"
+
+springdoc:
+  swagger-ui:
+    path: main.html
+  version: v1
+  paths-to-match:

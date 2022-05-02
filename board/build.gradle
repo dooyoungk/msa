@@ -22,6 +22,7 @@ repositories {
 }
 
 dependencies {
+
     /* Spring Boot - Actuator */
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
@@ -45,6 +46,10 @@ dependencies {
 
     /* Spring Boot - Test */
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    /* springdoc */
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.10'
+
 }
 
 tasks.named('test') {

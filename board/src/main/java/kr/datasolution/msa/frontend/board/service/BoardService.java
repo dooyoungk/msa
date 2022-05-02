@@ -36,28 +36,37 @@ public class BoardService {
 
     /**
      * 게시물 등록 처리
+     *
      * @param boardDto 게시물 등록 데이터
+     * @return
      */
-    public void addBoard(BoardDto boardDto) {
+    public int addBoard(BoardDto boardDto) {
         int count = boardMapper.save(boardDto);
         log.info("BOARD INSERT COUNT : {}", count);
+        return count;
     }
 
     /**
      * 게시물 수정 처리
+     *
      * @param boardDto 게시물 수정 데이터
+     * @return
      */
-    public void modBoard(BoardDto boardDto) {
+    public int modBoard(BoardDto boardDto) {
         int count = boardMapper.update(boardDto);
         log.info("BOARD UPDATE COUNT : {}", count);
+        return count;
     }
 
     /**
      * 게시물 삭제 처리
+     *
      * @param id 게시물 ID
+     * @return
      */
-    public void removeBoard(int id) {
+    public int removeBoard(int id) {
         int count = boardMapper.deleteById(id);
         log.info("BOARD DELETE COUNT : {}", count);
+        return count;
     }
 }
