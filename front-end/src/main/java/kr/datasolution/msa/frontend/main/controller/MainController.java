@@ -15,6 +15,6 @@ public class MainController {
      */
     @GetMapping("")
     public String getViewMain() {
-        return "redirect:/board";
+        return "redirect:/api";
     }
 }

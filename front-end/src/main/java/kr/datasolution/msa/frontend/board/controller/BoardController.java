@@ -8,12 +8,16 @@ import kr.datasolution.msa.frontend.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 게시물 관련 처리 Controller Layer
  */
+@Controller
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -35,10 +39,10 @@ public class BoardController {
             @ApiResponse(responseCode = "404", description = "NOT FOUND !!"),
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!"),
     })
-    @GetMapping("list")
-    public ResponseEntity<?> getViewBoardMain(ModelMap map) {
-        map.put("list", boardService.getBoardList());
-        return new ResponseEntity<>(map, HttpStatus.OK);
+    @GetMapping("")
+    public ResponseEntity<List<BoardDto>> getViewBoardMain() {
+        boardService.getBoardList();
+        return ResponseEntity.status(HttpStatus.OK).body(boardService.getBoardList());
     }
 
 //    @GetMapping("")
@@ -56,11 +60,9 @@ public class BoardController {
      */
     @Operation (summary = "게시물 상세 조회", description = "hello api example")
     @GetMapping("{id}")
-    public ResponseEntity<?> getViewBoard(
-            @PathVariable("id") int id,
-            ModelMap map) {
-        map.put("info", boardService.getBoard(id));
-        return new ResponseEntity<>(map, HttpStatus.OK);
+    public ResponseEntity<BoardDto> getViewBoard(
+            @PathVariable("id") int id) {
+        return ResponseEntity.status(HttpStatus.OK).body(boardService.getBoard(id));
     }
 
 //    /**
@@ -95,11 +97,9 @@ public class BoardController {
      */
     @Operation (summary = "게시물 등록", description = "new contents in board")
     @PostMapping("")
-    public int addBoard(
-            @RequestBody BoardDto boardDto,
-            ModelMap map) {
-        //return new ResponseEntity<>(map, HttpStatus.CREATED);
-        return boardService.addBoard(boardDto);
+    public ResponseEntity<Integer> addBoard(
+            @RequestBody BoardDto boardDto) {
+        return ResponseEntity.status(HttpStatus.OK).body(boardService.addBoard(boardDto));
     }
 
     /**
@@ -111,12 +111,11 @@ public class BoardController {
      */
     @Operation (summary = "게시물 수정", description = "modify board contents")
     @PutMapping("{id}")
-    public int modBoard(
+    public ResponseEntity<Integer> modBoard(
             @PathVariable("id") int id,
-            @RequestBody BoardDto boardDto,
-            ModelMap map) {
+            @RequestBody BoardDto boardDto) {
         boardDto.setId(id);
-        return boardService.modBoard(boardDto);
+        return ResponseEntity.ok(boardService.modBoard(boardDto));
     }
 
     /**
@@ -128,9 +127,8 @@ public class BoardController {
      */
     @Operation (summary = "게시물 삭제", description = "delete board contents")
     @DeleteMapping("{id}")
-    public int removeBoard(
-            @PathVariable("id") int id,
-            ModelMap map) {
-        return boardService.removeBoard(id);
+    public ResponseEntity<Integer> removeBoard(
+            @PathVariable("id") int id) {
+        return ResponseEntity.ok(boardService.removeBoard(id));
     }
 }
