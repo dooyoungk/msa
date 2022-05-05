@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: boardService
+          uri : http://localhost:8081
+          predicates:
+            - Path=/api/**
+          filters:
+            - AddRequestHeader=first-request, first-requests-header1
+            - AddResponseHeader=first-response, first-response-header1
+        - id: frontendService
+          uri : http://localhost:8089
+          predicates:
+            - Path=/board/**
+          filters:
+            - AddRequestHeader=second-request, second-requests-header2
+            - AddResponseHeader=second-response, second-response-header2
