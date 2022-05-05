@@ -8,19 +8,19 @@ spring:
     gateway:
       routes:
         - id: boardService
-          uri : http://localhost:8081
+          uri : lb://BOARD
           predicates:
             - Path=/api/**
 
 
         - id: boardtwoService
-          uri : http://localhost:8082
+          uri : lb://BOARD
           predicates:
             - Path=/api/**
 
 
         - id: frontendService
-          uri : http://localhost:8089
+          uri : lb://FRONT-END
           predicates:
             - Path=/board/**
 

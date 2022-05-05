@@ -43,4 +43,9 @@ management:
       exposure:
         include: "health,info"
 
-
+eureka:
+  client:
+    register-with-eureka: true  #Eureka server에 등록하고 검색할지에 대한 설정
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka #http://localhost:8761/eureka
